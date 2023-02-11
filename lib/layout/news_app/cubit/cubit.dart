@@ -6,7 +6,7 @@ import 'package:news_app/modules/news_app/science/science_screen.dart';
 import 'package:news_app/modules/news_app/sports/sports_screen.dart';
 import 'package:news_app/shared/network/remote/dio_helper.dart';
 
-import '../../../shared/network/end_points.dart';
+import '../../../shared/components/constants.dart';
 
 class NewsCubit extends Cubit<NewsStates> {
   NewsCubit() : super(NewsInitialState());
@@ -62,7 +62,6 @@ class NewsCubit extends Cubit<NewsStates> {
         'apiKey': API,
       },
     ).then((value) {
-      //print(value.data['articles'][0]['title']);
       business = value.data['articles'];
       print(business![0]['title']);
 
